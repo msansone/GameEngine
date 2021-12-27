@@ -1,0 +1,15 @@
+from firemelon_core import Particle
+
+class %NAME%(Particle):
+
+    def __init__(self):
+        Particle.__init__(self)
+
+    def initialize(self):
+        return
+
+    def emitted(self):
+        return
+
+    def update(self, time):
+        return

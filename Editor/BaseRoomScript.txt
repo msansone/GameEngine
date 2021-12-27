@@ -1,0 +1,21 @@
+﻿from firemelon_core import Room
+
+class %NAME%(Room):
+
+    def __init__(self):
+        return
+		
+    def roomLoaded(self):
+        return
+
+    def roomLoading(self):
+        return
+
+    def entityCreated(self, entity):
+        return
+
+    def entityEntered(self, entity):
+        return
+
+    def entityExited(self, entity):
+        return

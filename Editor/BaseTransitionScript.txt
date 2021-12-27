@@ -1,0 +1,18 @@
+from firemelon_core import Transition
+
+class %NAME%(Transition):
+
+    def __init__(self):
+        Transition.__init__(self)
+
+    def initialize(self):
+        return
+
+    def begin(self):
+        return
+
+    def update(self, time):
+        return
+
+    def complete(self):
+        return

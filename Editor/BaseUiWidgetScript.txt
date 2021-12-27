@@ -1,0 +1,27 @@
+﻿from firemelon_core import UiWidget
+
+class %NAME%(UiWidget):
+
+    def __init__(self):
+        UiWidget.__init__(self)
+
+    def initialize(self):
+        return
+
+    def update(self, time):
+        return
+
+    def render(self):
+        return
+
+    def buttonDown(self, buttonCode):
+        return
+
+    def buttonUp(self, buttonCode):
+        return		
+
+    def enter(self, fromAbove):
+        return
+
+    def leave(self):
+        return

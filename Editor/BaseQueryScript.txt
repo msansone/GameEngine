@@ -1,0 +1,9 @@
+from firemelon_core import Query
+
+class %NAME%(Query):
+
+    def __init__(self):
+        Query.__init__(self)
+
+    def run(self, queryContainer):
+        return

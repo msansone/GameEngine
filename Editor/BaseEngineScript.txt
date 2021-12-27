@@ -1,0 +1,10 @@
+class Engine:
+
+    def __init__(self):
+        return
+
+    def engineStarted(self):
+        return
+
+    def engineStopped(self):
+        return

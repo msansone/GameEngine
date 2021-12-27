@@ -1,0 +1,992 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D2B02AD-2DD4-4C36-BE9A-5EBE336DBE0E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FiremelonEditor2</RootNamespace>
+    <AssemblyName>FiremelonEditor2.1</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>firemelonicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release %28No Console%29|AnyCPU'">
+    <OutputPath>bin\Release %28No Console%29\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DragonOgg, Version=1.0.5864.42849, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DragonOgg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="OpenTK">
+      <HintPath>.\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
+      <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net46\System.Windows.Forms.Ribbon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Cpp\Firemelon\packages\DockPanelSuite.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Cpp\Firemelon\packages\DockPanelSuite.ThemeVS2015.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Controls\ConstantsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ConstantsEditorControl.Designer.cs">
+      <DependentUpon>ConstantsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\EdgeSelectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\EdgeSelectorControl.Designer.cs">
+      <DependentUpon>EdgeSelectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\ParticleEmittersEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ParticleEmittersEditorControl.Designer.cs">
+      <DependentUpon>ParticleEmittersEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\ResourceManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ResourceManagerControl.Designer.cs">
+      <DependentUpon>ResourceManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Dtos\SceneryAnimationDto.cs" />
+    <Compile Include="Classes\Dtos\ExternalResourceDto.cs" />
+    <Compile Include="Classes\Dtos\ProjectDtos\ProjectDto_2_2.cs" />
+    <Compile Include="Classes\ExceptionHandler.cs" />
+    <Compile Include="Classes\Exceptions\InvalidSlopeRiseException.cs" />
+    <Compile Include="Classes\Factories\DialogFactory.cs" />
+    <Compile Include="Classes\Forms\ResourcesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\ResourcesForm.Designer.cs">
+      <DependentUpon>ResourcesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\OverlayGenerator.cs" />
+    <Compile Include="Classes\ProjectLauncher.cs" />
+    <Compile Include="Classes\ProjectStreamReaders\ProjectStreamReader_2_2.cs" />
+    <Compile Include="Classes\ProjectStreamWriters\ProjectStreamWriter_2_2.cs" />
+    <Compile Include="Classes\ProjectUpgraders\ProjectUpgrader_2_1.cs" />
+    <Compile Include="Classes\TypeConverters\SceneryAnimationConverter.cs" />
+    <Compile Include="Classes\TypeEditors\WorldGeometryEdgeSelectorTypeEditor.cs" />
+    <Compile Include="Classes\Utilities\BitmapUtility.cs" />
+    <Compile Include="Classes\CheckeredBackgroundGenerator.cs" />
+    <Compile Include="Classes\Cursors\RoomEditorCursor.cs" />
+    <Compile Include="Classes\Cursors\TileObjectCursor.cs" />
+    <Compile Include="Classes\Cursors\WorldGeometryCursor.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetCreationParamsDtos\ActorMapWidgetCreationParameters.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetCreationParamsDtos\EventMapWidgetCreationParametersDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetCreationParamsDtos\HudElementMapWidgetCreationParametersDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetCreationParamsDtos\TileObjectMapWidgetCreationParametersDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\ActorWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\EntityWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\EventWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\HudElementWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\TileObjectWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\WorldGeometryWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\ProjectDtos\BaseProjectDto.cs" />
+    <Compile Include="Classes\Dtos\ProjectDtos\ProjectDto_1_0.cs" />
+    <Compile Include="Classes\Dtos\ProjectDtos\ProjectDto_2_1.cs" />
+    <Compile Include="Classes\Primative Types\ColorRgba.cs" />
+    <Compile Include="Classes\Cursors\AudioSourceCursor.cs" />
+    <Compile Include="Classes\Cursors\ParticleEmitterCursor.cs" />
+    <Compile Include="Classes\Cursors\SpawnPointCursor.cs" />
+    <Compile Include="Classes\Dtos\ActionPointDto.cs" />
+    <Compile Include="Classes\Dtos\ActorDto.cs" />
+    <Compile Include="Classes\Dtos\AnimationGroupDto.cs" />
+    <Compile Include="Classes\Dtos\AudioResourceDto.cs" />
+    <Compile Include="Classes\Dtos\BitmapResourceDto.cs" />
+    <Compile Include="Classes\Utilities\DrawingUtility.cs" />
+    <Compile Include="Classes\Dtos\WorldGeometryEdgesDto.cs" />
+    <Compile Include="Classes\Controls\PythonScriptEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PythonScriptEditorControl.Designer.cs">
+      <DependentUpon>PythonScriptEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\ScriptManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ScriptManagerControl.Designer.cs">
+      <DependentUpon>ScriptManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Utilities\LinearAlgebraUtility.cs" />
+    <Compile Include="Deprecated Files\Dtos\EntityClassificationDto.cs" />
+    <Compile Include="Deprecated Files\Dtos\EntityInstanceSelectorDto.cs" />
+    <Compile Include="Classes\Dtos\AnimationDto.cs" />
+    <Compile Include="Classes\Dtos\AnimationSlotDto.cs" />
+    <Compile Include="Classes\Dtos\AssetMenuDto.cs" />
+    <Compile Include="Classes\Dtos\AudioAssetDto.cs" />
+    <Compile Include="Classes\Dtos\BaseDto.cs" />
+    <Compile Include="Classes\Dtos\EntityDto.cs" />
+    <Compile Include="Deprecated Files\Dtos\EntityInstanceCreationParametersDto.cs" />
+    <Compile Include="Deprecated Files\Dtos\EntityInstanceDto.cs" />
+    <Compile Include="Classes\Dtos\EventDto.cs" />
+    <Compile Include="Classes\Dtos\GameButtonGroupDto.cs" />
+    <Compile Include="Classes\Dtos\LoadingScreenDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetCreationParamsDtos\MapWidgetCreationParametersDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\AudioSourceWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\MapWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\ParticleEmitterWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetSelectorDto.cs" />
+    <Compile Include="Classes\Dtos\NamedScriptDtoProxy.cs" />
+    <Compile Include="Classes\Dtos\ParticleEmitterDto.cs" />
+    <Compile Include="Classes\Dtos\SheetDto.cs" />
+    <Compile Include="Classes\Dtos\SpawnPointDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetDtos\SpawnPointWidgetDto.cs" />
+    <Compile Include="Classes\Dtos\ParticleDto.cs" />
+    <Compile Include="Classes\Dtos\DataFileDto.cs" />
+    <Compile Include="Classes\Dtos\TileObjectDto.cs" />
+    <Compile Include="Classes\Dtos\TransitionDto.cs" />
+    <Compile Include="Classes\Dtos\TriggerSignalDto.cs" />
+    <Compile Include="Classes\Dtos\FrameTriggerDto.cs" />
+    <Compile Include="Classes\Dtos\GameButtonDto.cs" />
+    <Compile Include="Classes\Dtos\HudElementDto.cs" />
+    <Compile Include="Classes\Dtos\MenuBookDto.cs" />
+    <Compile Include="Classes\Dtos\MenuPageDto.cs" />
+    <Compile Include="Classes\Dtos\MenuItemDto.cs" />
+    <Compile Include="Classes\Dtos\PropertyDto.cs" />
+    <Compile Include="Classes\Dtos\ProjectResourcesDto.cs" />
+    <Compile Include="Classes\Dtos\QueryDto.cs" />
+    <Compile Include="Classes\Dtos\ScriptDto.cs" />
+    <Compile Include="Classes\Dtos\StateDto.cs" />
+    <Compile Include="Classes\Dtos\StatefulEntityDto.cs" />
+    <Compile Include="Classes\Dtos\WorldGeometryDto.cs" />
+    <Compile Include="Classes\Dtos\MapWidgetCreationParamsDtos\WorldGeometryMapWidgetCreationParametersDto.cs" />
+    <Compile Include="Classes\Exceptions\NoStreamReaderExistsException.cs" />
+    <Compile Include="Classes\Exceptions\NoStreamWriterExistsException.cs" />
+    <Compile Include="Classes\Exceptions\NoUpgraderExistsException.cs" />
+    <Compile Include="Classes\Factories\ScriptGeneratorFactory.cs" />
+    <Compile Include="Classes\MapWidgetProperties.cs" />
+    <Compile Include="Classes\MapWidgetPropertyDescriptor.cs" />
+    <Compile Include="Classes\Exceptions\InvalidNameException.cs" />
+    <Compile Include="Classes\Exceptions\InvalidProjectFileException.cs" />
+    <Compile Include="Classes\Exceptions\InvalidProjectFileVersionException.cs" />
+    <Compile Include="Classes\Exceptions\InvalidSheetCellSizeException.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\ActorWidgetController.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\AudioSourceWidgetController.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\EventWidgetController.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\HudElementWidgetController.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\MapWidgetControllerFactory.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\ParticleEmitterWidgetController.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\TileObjectWidgetController.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\WorldGeometryWidgetController.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetFactory.cs" />
+    <Compile Include="Classes\MapWidgets\MapWidgetControllers\SpawnPointWidgetController.cs" />
+    <Compile Include="Classes\NameGenerator.cs" />
+    <Compile Include="Classes\Utilities\NameUtility.cs" />
+    <Compile Include="Classes\NameValidator.cs" />
+    <Compile Include="Classes\ProjectExporter.cs" />
+    <Compile Include="Classes\ProjectStreamReaders\ProjectStreamReader_1_0.cs" />
+    <Compile Include="Classes\ProjectStreamReaders\ProjectStreamReader_2_1.cs" />
+    <Compile Include="Classes\ProjectStreamWriters\ProjectStreamWriter_2_1.cs" />
+    <Compile Include="Classes\ProjectUpgraders\ProjectUpgrader_1_0.cs" />
+    <Compile Include="Classes\Utilities\ProjectUtility.cs" />
+    <Compile Include="Classes\Primative Types\Rectangle.cs" />
+    <Compile Include="Classes\ResourceBitmapReader.cs" />
+    <Compile Include="Classes\ResourceTextReader.cs" />
+    <Compile Include="Classes\ScriptGenerators\BlankScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\EngineScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\EntityScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\LoadingScreenScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\UiWidgetScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\MissingScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\NetworkHandlerScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\ParticleEmitterScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\QueryScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\RoomScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\ParticleScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\TransitionScriptGenerator.cs" />
+    <Compile Include="Classes\ScriptGenerators\UiManagerScriptGenerator.cs" />
+    <Compile Include="Classes\Utilities\SheetUtility.cs" />
+    <Compile Include="Classes\SpriteSheetImageList.cs" />
+    <Compile Include="Classes\TypeConverters\AudioConverter.cs" />
+    <Compile Include="Classes\TypeConverters\GameButtonGroupConverter.cs" />
+    <Compile Include="Classes\TypeConverters\LoadingScreenConverter.cs" />
+    <Compile Include="Classes\TypeConverters\ParticleConverter.cs" />
+    <Compile Include="Classes\TypeConverters\ParticleEmitterConverter.cs" />
+    <Compile Include="Classes\TypeConverters\SpawnPointConverter.cs" />
+    <Compile Include="Classes\TypeConverters\StateConverter.cs" />
+    <Compile Include="Classes\TypeConverters\TransitionConverter.cs" />
+    <Compile Include="Classes\TypeConverters\TriggerSignalConverter.cs" />
+    <Compile Include="Classes\TypeEditors\PythonScriptFilePathUiTypeEditor.cs" />
+    <Compile Include="Classes\TypeEditors\AlphaMaskSheetCellUiTypeEditor.cs" />
+    <Compile Include="Classes\TypeEditors\SpriteSheetCellUiTypeEditor.cs" />
+    <Compile Include="Classes\Utilities\UriUtility.cs" />
+    <Compile Include="Classes\Utilities\UtilityFactory.cs" />
+    <Compile Include="Classes\Controls\AnimationFrameViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\AnimationFrameViewerControl.Designer.cs">
+      <DependentUpon>AnimationFrameViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\AnimationsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\AnimationsEditorControl.Designer.cs">
+      <DependentUpon>AnimationsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\AssetSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\AssetSelectionControl.Designer.cs">
+      <DependentUpon>AssetSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\AudioAssetsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\AudioAssetsEditorControl.Designer.cs">
+      <DependentUpon>AudioAssetsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\AudioPlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\AudioPlayerControl.Designer.cs">
+      <DependentUpon>AudioPlayerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\EntitiesEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\EntitiesEditorControl.Designer.cs">
+      <DependentUpon>EntitiesEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\GameButtonsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\GameButtonsEditorControl.Designer.cs">
+      <DependentUpon>GameButtonsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\LoadingScreensEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\LoadingScreensEditorControl.Designer.cs">
+      <DependentUpon>LoadingScreensEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\MapWidgetInstanceListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\MapWidgetInstanceListControl.Designer.cs">
+      <DependentUpon>MapWidgetInstanceListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\MapWidgetPropertiesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\MapWidgetPropertiesControl.Designer.cs">
+      <DependentUpon>MapWidgetPropertiesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\ScriptsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ScriptsEditorControl.Designer.cs">
+      <DependentUpon>ScriptsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\SpriteSheetViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\SpriteSheetViewerControl.Designer.cs">
+      <DependentUpon>SpriteSheetViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\RefreshableListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\SortableBindingList.cs" />
+    <Compile Include="Classes\TypeConverters\AnimationConverter.cs" />
+    <Compile Include="Classes\TypeConverters\HitboxIdentityConverter.cs" />
+    <Compile Include="Classes\TypeEditors\AudioFilePathUiTypeEditor.cs" />
+    <Compile Include="Classes\Dtos\FrameDto.cs" />
+    <Compile Include="Classes\Dtos\HitboxDto.cs" />
+    <Compile Include="Classes\Dtos\HitboxIdentityDto.cs" />
+    <Compile Include="Classes\TypeEditors\ImageFilePathUiTypeEditor.cs" />
+    <Compile Include="Classes\Factories\FiremelonEditorFactory.cs" />
+    <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Classes\Dtos\LayerDto.cs" />
+    <Compile Include="Classes\Primative Types\Point2D.cs" />
+    <Compile Include="Classes\Primative Types\Point3D.cs" />
+    <Compile Include="Classes\Primative Types\Point4D.cs" />
+    <Compile Include="Classes\ProjectController.cs" />
+    <Compile Include="Classes\Dtos\ProjectUiStateDto.cs" />
+    <Compile Include="Classes\Dtos\RoomDto.cs" />
+    <Compile Include="Classes\TypeConverters\SpriteSheetConverter.cs" />
+    <Compile Include="Classes\Dtos\SpriteSheetDto.cs" />
+    <Compile Include="Classes\Dtos\TileSelectorDto.cs" />
+    <Compile Include="Classes\Dtos\TileSetDto.cs" />
+    <Compile Include="Classes\Dtos\TileSheetDto.cs" />
+    <Compile Include="Classes\Controls\LayerListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\LayerListControl.designer.cs">
+      <DependentUpon>LayerListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\RoomEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\RoomListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\RoomListControl.designer.cs">
+      <DependentUpon>RoomListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\SpriteSheetsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\SpriteSheetsEditorControl.Designer.cs">
+      <DependentUpon>SpriteSheetsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\StateEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\StateEditorControl.Designer.cs">
+      <DependentUpon>StateEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\TempControlToCopyStuffTo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TempControlToCopyStuffTo.Designer.cs">
+      <DependentUpon>TempControlToCopyStuffTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\TileObjectViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TileObjectViewerControl.Designer.cs">
+      <DependentUpon>TileObjectViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\TileSheetsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TileSheetsEditorControl.Designer.cs">
+      <DependentUpon>TileSheetsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\TileSheetViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TileSheetViewerControl.designer.cs">
+      <DependentUpon>TileSheetViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\TransitionsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TransitionsEditorControl.Designer.cs">
+      <DependentUpon>TransitionsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\UiEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\UiEditorControl.Designer.cs">
+      <DependentUpon>UiEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Deprecated Files\Controls\TilesetControl.cs" />
+    <Compile Include="Deprecated Files\Dtos\CollisionTileSheetDto.cs" />
+    <Compile Include="Deprecated Files\Dtos\TilePropertiesDto.cs" />
+    <Compile Include="Classes\Forms\AnimationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\AnimationEditor.Designer.cs">
+      <DependentUpon>AnimationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\AssetEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\AssetEditor.Designer.cs">
+      <DependentUpon>AssetEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\AssetSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\AssetSelectionForm.designer.cs">
+      <DependentUpon>AssetSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\AudioAssetEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\AudioAssetEditor.Designer.cs">
+      <DependentUpon>AudioAssetEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\FindReplaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\FindReplaceDialog.Designer.cs">
+      <DependentUpon>FindReplaceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\EnterNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\EnterNameForm.Designer.cs">
+      <DependentUpon>EnterNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\ChangeProjectNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\ChangeProjectNameForm.Designer.cs">
+      <DependentUpon>ChangeProjectNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\EditLayerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\EditLayerDialog.Designer.cs">
+      <DependentUpon>EditLayerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\EditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deprecated Files\PopoutForm - Copy.cs" />
+    <Compile Include="Deprecated Files\PopoutForm - Copy.designer.cs">
+      <DependentUpon>PopoutForm - Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\PopoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\PopoutForm.designer.cs">
+      <DependentUpon>PopoutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\ProgressForm.Designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\RoomEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\RoomEditorForm.Designer.cs">
+      <DependentUpon>RoomEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\SheetCellSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\SheetCellSelectorDialog.Designer.cs">
+      <DependentUpon>SheetCellSelectorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\StringReplacementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\StringReplacementDialog.Designer.cs">
+      <DependentUpon>StringReplacementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\ScriptsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\ScriptsForm.Designer.cs">
+      <DependentUpon>ScriptsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\WarningsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\WarningsForm.Designer.cs">
+      <DependentUpon>WarningsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\LayerListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\LayerListForm.designer.cs">
+      <DependentUpon>LayerListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\NewLayerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\NewLayerDialog.designer.cs">
+      <DependentUpon>NewLayerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\NewProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\NewProjectDialog.designer.cs">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\NewRoomDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\Dialogs\NewRoomDialog.designer.cs">
+      <DependentUpon>NewRoomDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\PropertyGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\PropertyGridForm.Designer.cs">
+      <DependentUpon>PropertyGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\RoomListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\RoomListForm.designer.cs">
+      <DependentUpon>RoomListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\RoomPropertiesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\RoomPropertiesEditor.Designer.cs">
+      <DependentUpon>RoomPropertiesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\SpriteSheetEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\SpriteSheetEditor.Designer.cs">
+      <DependentUpon>SpriteSheetEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\StateEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\StateEditor.Designer.cs">
+      <DependentUpon>StateEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Forms\TileSheetEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Forms\TileSheetEditor.Designer.cs">
+      <DependentUpon>TileSheetEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IActionPointDtoProxy.cs" />
+    <Compile Include="Interfaces\IActorDtoProxy.cs" />
+    <Compile Include="Interfaces\IAnimationDtoProxy.cs" />
+    <Compile Include="Interfaces\IAnimationEditor.cs" />
+    <Compile Include="Interfaces\IAnimationFrameViewerControl.cs" />
+    <Compile Include="Interfaces\IAnimationGroupDtoProxy.cs" />
+    <Compile Include="Interfaces\IAnimationsEditorControl.cs" />
+    <Compile Include="Interfaces\IAssetEditor.cs" />
+    <Compile Include="Interfaces\IAssetsEditorControl.cs" />
+    <Compile Include="Interfaces\IAssetsControl.cs" />
+    <Compile Include="Interfaces\IAssetSelectionForm.cs" />
+    <Compile Include="Interfaces\IAudioAssetDtoProxy.cs" />
+    <Compile Include="Interfaces\IAudioAssetEditor.cs" />
+    <Compile Include="Interfaces\IAudioAssetsEditorControl.cs" />
+    <Compile Include="Interfaces\IAudioPlayerControl.cs" />
+    <Compile Include="Interfaces\IBackgroundGenerator.cs" />
+    <Compile Include="Interfaces\IBaseDtoProxy.cs" />
+    <Compile Include="Interfaces\IConstantsEditorControl.cs" />
+    <Compile Include="Interfaces\IDialogFactory.cs" />
+    <Compile Include="Interfaces\IDrawingUtility.cs" />
+    <Compile Include="Interfaces\IEntitiesEditorControl.cs" />
+    <Compile Include="Interfaces\IEntityClassificationDtoProxy.cs" />
+    <Compile Include="Interfaces\IEntityDtoProxy.cs" />
+    <Compile Include="Interfaces\IEventDtoProxy.cs" />
+    <Compile Include="Interfaces\IExceptionHandler.cs" />
+    <Compile Include="Interfaces\IFindReplaceDialog.cs" />
+    <Compile Include="Interfaces\IGameButtonsEditorControl.cs" />
+    <Compile Include="Interfaces\IHitboxDtoProxy.cs" />
+    <Compile Include="Interfaces\IHitboxIdentityDtoProxy.cs" />
+    <Compile Include="Interfaces\IHudElementDtoProxy.cs" />
+    <Compile Include="Interfaces\ILinearAlgebraUtility.cs" />
+    <Compile Include="Interfaces\ILoadingScreensEditorControl.cs" />
+    <Compile Include="Interfaces\IMapWidgetController.cs" />
+    <Compile Include="Interfaces\IMapWidgetInstanceListControl.cs" />
+    <Compile Include="Interfaces\IMapWidgetProperties.cs" />
+    <Compile Include="Interfaces\IMapWidgetPropertiesControl.cs" />
+    <Compile Include="Interfaces\IMenuBookDtoProxy.cs" />
+    <Compile Include="Interfaces\IMenuItemDtoProxy.cs" />
+    <Compile Include="Interfaces\IMenuPageDtoProxy.cs" />
+    <Compile Include="Interfaces\INameUtility.cs" />
+    <Compile Include="Interfaces\INameValidator.cs" />
+    <Compile Include="Interfaces\INewProjectDialog.cs" />
+    <Compile Include="Interfaces\IOverlayGenerator.cs" />
+    <Compile Include="Interfaces\IParticleEmittersEditorControl.cs" />
+    <Compile Include="Interfaces\IProjectExporter.cs" />
+    <Compile Include="Interfaces\IProjectLauncher.cs" />
+    <Compile Include="Interfaces\IProjectStreamReader.cs" />
+    <Compile Include="Interfaces\IProjectStreamWriter.cs" />
+    <Compile Include="Interfaces\IProjectUpgrader.cs" />
+    <Compile Include="Interfaces\IProjectUtility.cs" />
+    <Compile Include="Interfaces\IPropertyDtoProxy.cs" />
+    <Compile Include="Interfaces\IPythonScriptEditorControl.cs" />
+    <Compile Include="Interfaces\IQueryDtoProxy.cs" />
+    <Compile Include="Interfaces\IResizableMapWidgetController.cs" />
+    <Compile Include="Interfaces\IRoomEditorControl.cs" />
+    <Compile Include="Interfaces\IRoomEditorCursor.cs" />
+    <Compile Include="Interfaces\IRoomEditorForm.cs" />
+    <Compile Include="Interfaces\IRoomListControl.cs" />
+    <Compile Include="Interfaces\IRoomPropertiesEditor.cs" />
+    <Compile Include="Interfaces\ISceneryAnimationDtoProxy.cs" />
+    <Compile Include="Interfaces\IScriptGenerator.cs" />
+    <Compile Include="Interfaces\IScriptManagerControl.cs" />
+    <Compile Include="Interfaces\IScriptsEditorControl.cs" />
+    <Compile Include="Interfaces\ISheetDtoProxy.cs" />
+    <Compile Include="Interfaces\ISheetUtility.cs" />
+    <Compile Include="Interfaces\ISheetViewerControl.cs" />
+    <Compile Include="Interfaces\ISpawnPointDtoProxy.cs" />
+    <Compile Include="Interfaces\ISpawnPointInstanceDtoProxy.cs" />
+    <Compile Include="Interfaces\ISpriteSheetEditor.cs" />
+    <Compile Include="Interfaces\ISpriteSheetsEditorControl.cs" />
+    <Compile Include="Interfaces\IStateDtoProxy.cs" />
+    <Compile Include="Interfaces\IStateEditorControl.cs" />
+    <Compile Include="Interfaces\IStatefulEntityDtoProxy.cs" />
+    <Compile Include="Interfaces\ITileObjectViewerControl.cs" />
+    <Compile Include="Interfaces\ITileSheetEditor.cs" />
+    <Compile Include="Interfaces\ITileSheetsEditorControl.cs" />
+    <Compile Include="Interfaces\ITileSheetViewerControl.cs" />
+    <Compile Include="Interfaces\ITransitionsEditorControl.cs" />
+    <Compile Include="Interfaces\ITriggerSignalDtoProxy.cs" />
+    <Compile Include="Interfaces\IUiEditorControl.cs" />
+    <Compile Include="Interfaces\IUriUtility.cs" />
+    <Compile Include="Interfaces\IWorldGeometryDtoProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Classes\Controls\AnimationFrameViewerControl.resx">
+      <DependentUpon>AnimationFrameViewerControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\AnimationsEditorControl.resx">
+      <DependentUpon>AnimationsEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\AssetSelectionControl.resx">
+      <DependentUpon>AssetSelectionControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\AudioAssetsEditorControl.resx">
+      <DependentUpon>AudioAssetsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\AudioPlayerControl.resx">
+      <DependentUpon>AudioPlayerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\ConstantsEditorControl.resx">
+      <DependentUpon>ConstantsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\EdgeSelectorControl.resx">
+      <DependentUpon>EdgeSelectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\EntitiesEditorControl.resx">
+      <DependentUpon>EntitiesEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\GameButtonsEditorControl.resx">
+      <DependentUpon>GameButtonsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\LoadingScreensEditorControl.resx">
+      <DependentUpon>LoadingScreensEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\MapWidgetInstanceListControl.resx">
+      <DependentUpon>MapWidgetInstanceListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\MapWidgetPropertiesControl.resx">
+      <DependentUpon>MapWidgetPropertiesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\ParticleEmittersEditorControl.resx">
+      <DependentUpon>ParticleEmittersEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\PythonScriptEditorControl.resx">
+      <DependentUpon>PythonScriptEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\ResourceManagerControl.resx">
+      <DependentUpon>ResourceManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\ScriptManagerControl.resx">
+      <DependentUpon>ScriptManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\ScriptsEditorControl.resx">
+      <DependentUpon>ScriptsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\SpriteSheetViewerControl.resx">
+      <DependentUpon>SpriteSheetViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\LayerListControl.resx">
+      <DependentUpon>LayerListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\RoomEditorControl.resx">
+      <DependentUpon>RoomEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\RoomListControl.resx">
+      <DependentUpon>RoomListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\SpriteSheetsEditorControl.resx">
+      <DependentUpon>SpriteSheetsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\StateEditorControl.resx">
+      <DependentUpon>StateEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\TempControlToCopyStuffTo.resx">
+      <DependentUpon>TempControlToCopyStuffTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\TileObjectViewerControl.resx">
+      <DependentUpon>TileObjectViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\TileSheetsEditorControl.resx">
+      <DependentUpon>TileSheetsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\TileSheetViewerControl.resx">
+      <DependentUpon>TileSheetViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\TransitionsEditorControl.resx">
+      <DependentUpon>TransitionsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\UiEditorControl.resx">
+      <DependentUpon>UiEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\ResourcesForm.resx">
+      <DependentUpon>ResourcesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deprecated Files\Controls\TilesetControl.resx">
+      <DependentUpon>TilesetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\AnimationEditor.resx">
+      <DependentUpon>AnimationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\AssetEditor.resx">
+      <DependentUpon>AssetEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\AssetSelectionForm.resx">
+      <DependentUpon>AssetSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\AudioAssetEditor.resx">
+      <DependentUpon>AudioAssetEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\Dialogs\FindReplaceDialog.resx">
+      <DependentUpon>FindReplaceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\EnterNameForm.resx">
+      <DependentUpon>EnterNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\ChangeProjectNameForm.resx">
+      <DependentUpon>ChangeProjectNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\Dialogs\EditLayerDialog.resx">
+      <DependentUpon>EditLayerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\EditorForm.resx">
+      <DependentUpon>EditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deprecated Files\PopoutForm - Copy.resx">
+      <DependentUpon>PopoutForm - Copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\PopoutForm.resx">
+      <DependentUpon>PopoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\RoomEditorForm.resx">
+      <DependentUpon>RoomEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\ScriptsForm.resx">
+      <DependentUpon>ScriptsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\Dialogs\SheetCellSelectorDialog.resx">
+      <DependentUpon>SheetCellSelectorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\Dialogs\StringReplacementDialog.resx">
+      <DependentUpon>StringReplacementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\WarningsForm.resx">
+      <DependentUpon>WarningsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\LayerListForm.resx">
+      <DependentUpon>LayerListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\Dialogs\NewLayerDialog.resx">
+      <DependentUpon>NewLayerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\Dialogs\NewProjectDialog.resx">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\Dialogs\NewRoomDialog.resx">
+      <DependentUpon>NewRoomDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\PropertyGridForm.resx">
+      <DependentUpon>PropertyGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\RoomListForm.resx">
+      <DependentUpon>RoomListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\RoomPropertiesEditor.resx">
+      <DependentUpon>RoomPropertiesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\SpriteSheetEditor.resx">
+      <DependentUpon>SpriteSheetEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\StateEditor.resx">
+      <DependentUpon>StateEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Forms\TileSheetEditor.resx">
+      <DependentUpon>TileSheetEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pauseicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pauseicondown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pauseiconover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="playicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="playicondown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="playiconover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\fragment.glsl" />
+    <EmbeddedResource Include="Resources\fragment_texture.glsl" />
+    <EmbeddedResource Include="Resources\vertex.glsl" />
+    <None Include="stopicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stopicondown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stopiconover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseEntityScript.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BaseEngineScript.txt" />
+    <EmbeddedResource Include="Resources\fmod.dll" />
+    <None Include="TileMode2Down.png" />
+    <None Include="TileMode2Over.png" />
+    <None Include="TileMode2Normal.png" />
+    <None Include="TileModeDown.png" />
+    <None Include="TileModeOver.png" />
+    <None Include="TileModeNormal.png" />
+    <EmbeddedResource Include="Resources\python3.dll" />
+    <EmbeddedResource Include="Resources\python36.dll" />
+    <EmbeddedResource Include="Resources\SDL2_net.dll" />
+    <EmbeddedResource Include="Resources\boost_python-vc140-mt-1_64.dll" />
+    <EmbeddedResource Include="Resources\boost_python3-vc140-mt-1_64.dll" />
+    <EmbeddedResource Include="Resources\particleemitter.py" />
+    <EmbeddedResource Include="Resources\particle.py" />
+    <EmbeddedResource Include="Resources\transition.py" />
+    <EmbeddedResource Include="Resources\entityserializer.py" />
+    <EmbeddedResource Include="Resources\networkhandler.py" />
+    <EmbeddedResource Include="Resources\loadingscreen.py" />
+    <EmbeddedResource Include="Resources\FiremelonCore.dll" />
+    <EmbeddedResource Include="Resources\entity.py" />
+    <EmbeddedResource Include="Resources\uiwidget.py" />
+    <EmbeddedResource Include="Resources\query.py" />
+    <EmbeddedResource Include="Resources\room.py" />
+    <EmbeddedResource Include="Resources\ui.py" />
+    <EmbeddedResource Include="Resources\__init__.py" />
+    <EmbeddedResource Include="Resources\DevIL.dll" />
+    <EmbeddedResource Include="Resources\Firemelon.exe" />
+    <EmbeddedResource Include="Resources\Firemelon_Console.exe" />
+    <EmbeddedResource Include="Resources\freeglut.dll" />
+    <EmbeddedResource Include="Resources\glew32.dll" />
+    <EmbeddedResource Include="Resources\ILU.dll" />
+    <EmbeddedResource Include="Resources\ILUT.dll" />
+    <EmbeddedResource Include="Resources\jpeg.dll" />
+    <EmbeddedResource Include="Resources\libjpeg-9.dll" />
+    <EmbeddedResource Include="Resources\libpng12-0.dll" />
+    <EmbeddedResource Include="Resources\libpng16-16.dll" />
+    <EmbeddedResource Include="Resources\libtiff-3.dll" />
+    <EmbeddedResource Include="Resources\libtiff-5.dll" />
+    <EmbeddedResource Include="Resources\libwebp-4.dll" />
+    <EmbeddedResource Include="Resources\SDL2.dll" />
+    <EmbeddedResource Include="Resources\SDL2_image.dll" />
+    <EmbeddedResource Include="Resources\zlib1.dll" />
+    <EmbeddedResource Include="BaseUiWidgetScript.txt" />
+    <EmbeddedResource Include="BaseUiScript.txt" />
+    <EmbeddedResource Include="BaseRoomScript.txt" />
+    <EmbeddedResource Include="BaseLoadingScreenScript.txt" />
+    <EmbeddedResource Include="BaseNetworkHandlerScript.txt" />
+    <None Include="ErrorNotification.png" />
+    <EmbeddedResource Include="BaseTransitionScript.txt" />
+    <EmbeddedResource Include="BaseParticleScript.txt" />
+    <EmbeddedResource Include="BaseParticleEmitterScript.txt" />
+    <EmbeddedResource Include="audioicon.png" />
+    <EmbeddedResource Include="BaseEngineScript.txt" />
+    <Content Include="firemelonicon.ico" />
+    <EmbeddedResource Include="BaseQueryScript.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SpriteSheetBuilder\SpriteSheetBuilder\SpriteSheetBuilder.csproj">
+      <Project>{d4ac1724-a131-4aba-a6e9-632922c8f449}</Project>
+      <Name>SpriteSheetBuilder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+from firemelon_core import LoadingScreen
+
+class %NAME%(LoadingScreen):
+
+    def __init__(self):
+        LoadingScreen.__init__(self)
+
+    def initialize(self):
+        return
+
+    def percentChanged(self, percent):
+        return

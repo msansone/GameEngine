@@ -1,0 +1,15 @@
+from firemelon_core import NetworkHandler
+
+class %NAME%(NetworkHandler):
+
+    def __init__(self):
+        return
+
+    def connectionOpened(self):
+        return
+
+    def connectionClosedByClient(self):
+        return
+
+    def connectionClosedByServer(self):
+        return

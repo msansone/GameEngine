@@ -1,0 +1,9 @@
+﻿from firemelon_core import Ui
+
+class %NAME%(Ui):
+
+    def __init__(self):
+        return
+
+    def initialized(self):
+        return
